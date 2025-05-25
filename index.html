@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        #hero {
+            height: 100vh;
+            background-color: #e6f7f0;
+            display: flex;
+            flex-direction: column;
+            gap: 100px;
+            align-items: center;
+            justify-content: start;
+            text-align: center;
+
+            h1 {
+                font-size: 60px;
+            }
+
+            h5 {
+                font-size: 30px;
+            }
+
+            .body {
+
+                button {
+                    padding: 10px 20px;
+                    background-color: rgb(0, 213, 255);
+                    border: none;
+                    color: white;
+                    font-size: 20px;
+                    width: 300px;
+                }
+            }
+        }
+
+        header {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding-left: 100px;
+            padding-right: 100px;
+            margin-top: 20px;
+            gap: 500px;
+
+            #nav {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                color: #00ad6a;
+
+                button {
+                    padding: 10px 20px;
+                    font-size: 15px;
+                    color: green;
+                    background: none;
+                    border: 2px green solid;
+                    height: 45px;
+
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="hero">
+        <header>
+
+            <img src="images/pulse-logo.svg" alt="">
+            <div id="nav">
+                <h3>Features</h3>
+                <h3>Customer Stories</h3>
+                <h3>Pricing</h3>
+                <h3>Blog</h3>
+                <a href="signup.html"><button>Sign Up</button></a>
+            </div>
+        </header>
+
+
+        <div class="body">
+            <h1>Need an accurate financial forecast?</h1>
+            <h5>Use Pulse to project your cash flow with confidence.</h5>
+            <a href="signup.html"><button>Try 30 Days Free</button></a>
+        </div>
+    </div>
+</body>
+
+</html>

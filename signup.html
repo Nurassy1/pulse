@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section button {
+            padding: 10px 25px;
+            font-size: 30px;
+            background-color: #02ff80;
+            color: white;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .header {
+            width: 100%;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            background-color: #e6f7f0;
+        }
+
+        .header img {
+            width: 150px;
+            height: auto;
+        }
+
+        .header p {
+            font-size: 20px;
+            opacity: 80%;
+        }
+
+        .form-page {
+            padding: 10px 200px;
+            display: flex;
+            gap: 40px;
+        }
+
+        .form {
+            background-color: white;
+            box-shadow: 0 2px 4px black;
+            border: 1px solid black;
+            padding: 30px 20px;
+        }
+
+        .first-name,
+        .last-name,
+        .email,
+        .company-name,
+        .password,
+        .confirm-password {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+
+        .form input {
+            padding: 8px;
+        }
+
+        .footer-form {
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* .information-form-page {
+
+        } */
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="header">
+            <img src="images/pulse-logo.svg" alt="">
+            <p>Take control of your cash flow with the #1 cash flow software.</p>
+        </div>
+        <div class="form-page">
+            <div class="form">
+                <form>
+                    <div class="first-name">
+                        <label>First Name</label>
+                        <input id="first-name" type="text">
+                    </div>
+                    <div class="last-name">
+                        <label>Last Name</label>
+                        <input id="last-name" type="text">
+                    </div>
+                    <div class="email">
+                        <label>Email</label>
+                        <input id="email" type="email">
+                    </div>
+                    <div class="company-name">
+                        <label>Company Name</label>
+                        <input id="company-name" type="text">
+                    </div>
+                    <div class="password">
+                        <label>Create a Password</label>
+                        <input id="password" type="text">
+                    </div>
+                    <div class="confirm-password">
+                        <label>Confirm a password</label>
+                        <input id="confirm-password" type="text">
+                    </div>
+                </form>
+                <div class="footer-form">
+                    <h6>Your Pulse Site Address</h6>
+                    <p>Every Pulse account has its own unique web address where you'll log in. Remember to bookmark it!
+                    </p>
+                    <input type="email">
+                    <span>.pulseapp.com</span>
+                    <p>Letters and numbers only, no spaces</p>
+                </div>
+            </div>
+            <div class="information-form-page">
+                <h1>Pulse Plus</h1>
+                <p>Free Trial $59/mo after</p>
+                <hr>
+                <div class="quote">
+                    <p>”Pulse takes the fear and stress out of cash flow projection and management.”</p>
+                    <img src="images/avatar.jpg" alt="">
+                </div>
+                <p>Casimir Loeber <br>
+                    Base-10 Design & Development Inc.</p>
+                <hr>
+                <p>Need more from Pulse?</p>
+                <p>If you have a complex business with multiple financial accounts, currencies, or auditing needs, you
+                    should try our Pulse Unlimited plan for only $30 more per month.</p>
+                <a href="">Switch Now</a>
+            </div>
+        </div>
+        <button id="inputBtn">Start Trial</button>
+    </section>
+    <script>
+        const firstName = document.getElementById('first-name');
+        const lastName = document.getElementById('last-name');
+        const email = document.getElementById('email');
+        const companyName = document.getElementById('company-name');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirm-password');
+        const inputBtn = document.getElementById('inputBtn');
+
+        function updateForm() {
+            firstName.value = ''
+            lastName.value = ''
+            email.value = ''
+            companyName.value = ''
+            password.value = ''
+            confirmPassword.value = ''
+        }
+
+        inputBtn.addEventListener('click', () => {
+            if (!firstName.value || !email.value || !password.value || !confirmPassword.value) {
+                alert('This field is empty!');
+
+            }
+
+            if (confirmPassword.value == password.value) {
+                localStorage.setItem('first-name', firstName.value)
+                localStorage.setItem('last-name', lastName.value)
+                localStorage.setItem('email', email.value)
+                localStorage.setItem('company-name', companyName.value)
+                localStorage.setItem('password', password.value)
+                updateForm()
+            } else {
+                alert("Password isn't same.Please try again")
+                updateForm()
+            }
+        })
+
+    </script>
+</body>
+
+</html>
